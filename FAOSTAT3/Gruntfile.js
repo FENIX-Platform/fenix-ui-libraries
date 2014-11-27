@@ -2,16 +2,16 @@
 
 module.exports = function(grunt) {
 
-grunt.loadNpmTasks('grunt-contrib-uglify');
+//grunt.loadNpmTasks('grunt-contrib-uglify');
 grunt.loadNpmTasks('grunt-contrib-concat');
 grunt.loadNpmTasks('grunt-contrib-clean');
 grunt.loadNpmTasks('grunt-contrib-cssmin');
 grunt.loadNpmTasks('grunt-contrib-copy');
-grunt.loadNpmTasks('grunt-jsonlint');
-grunt.loadNpmTasks('grunt-contrib-watch');
+grunt.loadNpmTasks('grunt-contrib-rev');
 
 grunt.initConfig({
-	pkg: grunt.file.readJSON('package.json'),
+	pkg: grunt.file.readJSON('../package.json'),
+	nodedir: '../node_modules',
 	meta: {
 		banner:
 		'/* \n'+
@@ -30,94 +30,89 @@ grunt.initConfig({
 			src: ['dist/*']
 		}
 	},
-	jsonlint: {
-		sample: {
-			src: [ 'i18n/*.json' ]
-		}
-	},
 	copy: {
         jquery: {
             nonull: true,
-            src: 'node_modules/jquery/dist/jquery.min.js',
-            dest: 'src/lib/jquery.js'
+            src: '<%= nodedir %>/jquery/dist/jquery.min.js',
+            dest: 'libs/jquery.js'
         },
         backbone: {
             nonull: true,
-            src: 'node_modules/backbone/backbone-min.js',
-            dest: 'src/lib/backbone.js'
+            src: '<%= nodedir %>/backbone/backbone-min.js',
+            dest: 'libs/backbone.js'
         },
         "backbone.layoutmanager": {
             nonull: true,
-            src: "node_modules/backbone.layoutmanager/backbone.layoutmanager.js",
-            dest: "src/lib/backbone.layoutmanager.js"
+            src: "<%= nodedir %>/backbone.layoutmanager/backbone.layoutmanager.js",
+            dest: "libs/backbone.layoutmanager.js"
         },
         bootstrap_js: {
             nonull: true,
-            src: "node_modules/bootstrap/dist/js/bootstrap.min.js",
-            dest: 'src/lib/bootstrap.js'
+            src: "<%= nodedir %>/bootstrap/dist/js/bootstrap.min.js",
+            dest: 'libs/bootstrap.js'
         },
         bootstrap_css: {
             nonull: true,
-            src: "node_modules/bootstrap/dist/css/bootstrap.min.css",
-            dest: "src/lib/bootstrap.css"
+            src: "<%= nodedir %>/bootstrap/dist/css/bootstrap.min.css",
+            dest: "libs/bootstrap.css"
         },
         nprogress_js: {
             nonull: true,
-            src: "node_modules/nprogress/nprogress.js",
-            dest: "src/lib/nprogress.js"
+            src: "<%= nodedir %>/nprogress/nprogress.js",
+            dest: "libs/nprogress.js"
         },
         nprogress_css: {
             nonull: true,
-            src: "node_modules/nprogress/nprogress.css",
-            dest: "src/lib/nprogress.css"
+            src: "<%= nodedir %>/nprogress/nprogress.css",
+            dest: "libs/nprogress.css"
         },
         requirejs: {
             nonull: true,
-            src: "node_modules/requirejs/require.js",
-            dest: "src/lib/require.js"
+            src: "<%= nodedir %>/requirejs/require.js",
+            dest: "libs/require.js"
         },
         domready: {
             nonull: true,
-            src: "node_modules/domReady/domReady.js",
-            dest: "src/lib/domready.js"
+            src: "<%= nodedir %>/domReady/domReady.js",
+            dest: "libs/domready.js"
         },
         text: {
             nonull: true,
-            src: "node_modules/text/text.js",
-            dest: "src/lib/text.js"
+            src: "<%= nodedir %>/text/text.js",
+            dest: "libs/text.js"
         },
         i18n: {
             nonull: true,
-            src: "node_modules/i18n/i18n.js",
-            dest: "src/lib/i18n.js"
+            src: "<%= nodedir %>/i18n/i18n.js",
+            dest: "libs/i18n.js"
         },
         underscore: {
             nonull: true,
-            src: "node_modules/underscore/underscore-min.js",
-            dest: "src/lib/underscore.js"
+            src: "<%= nodedir %>/underscore/underscore-min.js",
+            dest: "libs/underscore.js"
         },
         jqwidgets_js: {
             nonull: true,
-            src: "node_modules/jqwidgets/jqx-all.js",
-            dest: "src/lib/jqwidgets.js"
+            src: "<%= nodedir %>/jqwidgets/jqx-all.js",
+            dest: "libs/jqwidgets.js"
         },
         jqwidgets_css: {
             nonull: true,
-            src: "node_modules/jqwidgets/styles/jqx.base.css",
-            dest: "src/lib/jqwidegts.css"
+            src: "<%= nodedir %>/jqwidgets/styles/jqx.base.css",
+            dest: "libs/jqwidegts.css"
         },
         handlebars: {
             nonull: true,
-            src: "node_modules/handlebars/dist/handlebars.min.js",
-            dest: "src/lib/handlebars.js"
+            src: "<%= nodedir %>/handlebars/dist/handlebars.min.js",
+            dest: "libs/handlebars.js"
         },
         jstree: {
             nonull: true,
             expand: true,
             //flatten: true,
-            cwd: "node_modules/jstree/dist/",
+            cwd: "<%= nodedir %>/jstree/dist/",
             src: '**',
-            dest: "src/lib/jstree/"
+            dest: "libs/jstree/"
         }
 	},
 	concat: {
@@ -130,38 +125,18 @@ grunt.initConfig({
 		},
 		jquery_plugins: {
 			src: [
-				'node_modules/jquery/dist/jquery.min.js',
-				'node_modules/hoverintent/dist/hoverintent.min.js',
-				'node_modules/leaflet/dist/leaflet.js',
-				'node_modules/leaflet.markercluster/dist/leaflet.markercluster.js',
-				'node_modules/jquery-powertip/dist/jquery.powertip.min.js',
+				'<%= nodedir %>/jquery/dist/jquery.min.js',
+				'<%= nodedir %>/hoverintent/dist/hoverintent.min.js',
+				'<%= nodedir %>/jquery-powertip/dist/jquery.powertip.min.js',
 				//TODO https://github.com/stevenbenner/jquery-powertip
-				//TODO https://github.com/stefanocudini/jquery-powertip
-				'node_modules/csvjson/csvjson.min.js',
+				'<%= nodedir %>/csvjson/csvjson.min.js',
 				//TODO https://github.com/aaronsnoswell/csvjson.js
 				//TODO https://github.com/stefanocudini/csvjson.js
-				'lib/jquery.i18n.properties-min.js',
-				'lib/jquery-ui.custom.min.js'
+				'libs/jquery.i18n.properties-min.js',
+				'libs/jquery-ui.custom.min.js'
 			],
-			dest: 'dist/fenix-ui-libs/jquery_plugins.min.js'
-		},
-        jquery_plugins_src: {
-            src: [
-                'node_modules/jquery/dist/jquery.min.js',
-                'node_modules/hoverintent/dist/hoverintent.min.js',
-                'node_modules/leaflet/dist/leaflet.js',
-                'node_modules/leaflet.markercluster/dist/leaflet.markercluster.js',
-                'node_modules/jquery-powertip/dist/jquery.powertip.min.js',
-                //TODO https://github.com/stevenbenner/jquery-powertip
-                //TODO https://github.com/stefanocudini/jquery-powertip
-                'node_modules/csvjson/csvjson.min.js',
-                //TODO https://github.com/aaronsnoswell/csvjson.js
-                //TODO https://github.com/stefanocudini/csvjson.js
-                'lib/jquery.i18n.properties-min.js',
-                'lib/jquery-ui.custom.min.js'
-            ],
-            dest: 'dist/fenix-ui-libs/jquery_plugins.js'
-        }
+			dest: 'dist/jquery_plugins.min.js'
+		}
 	},
 	cssmin: {
 		options: {
@@ -169,8 +144,8 @@ grunt.initConfig({
 		},
 		combine: {
 			src: [
-				'src/css/fenix-ui-leaflet.css',
-				'src/css/fenix-ui-map.css'				
+				'css/fenix-ui-leaflet.css',
+				'css/fenix-ui-map.css'				
 			],
 			dest: 'dist/fenix-ui-map.min.css'
 		},
@@ -182,12 +157,13 @@ grunt.initConfig({
 	}
 });
 
+//TODO add rev plugin
+
 grunt.registerTask('default', [
-	//'jshint',
 	'clean',
-	'concat:jquery_plugins',
-	'cssmin',
-	'copy'
+	'copy',
+	'concat',
+	'cssmin'
 ]);
 
 };

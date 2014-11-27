@@ -51,7 +51,6 @@
     "jqwidgets": "http://fenixapps.fao.org/repository/js/jqwidgets/3.1.tgz",
     "jstree": "~3.0.8",
 
-
     "jquery.18n.properties": "http://fenixapps.fao.org/repository/js/jquery.i18n.properties/jquery.i18n.properties-1.0.9.tgz",
     "jquery-powertip": "https://github.com/stevenbenner/jquery-powertip/tarball/v1.2.0",
     "stickyjs": "~1.0.1",
@@ -76,5 +75,4 @@
       "jquery-mousewheel": "~3.1.12",
       "jquery.fancybox": "http://fenixapps.fao.org/repository/js/jquery.fancybox/jquery.fancybox-2.1.4.tgz"
   }
-
 }
