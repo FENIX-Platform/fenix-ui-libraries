@@ -50,6 +50,8 @@
     "i18n": "https://github.com/requirejs/i18n/tarball/master",
     "jqwidgets": "http://fenixapps.fao.org/repository/js/jqwidgets/3.1.tgz",
     "jstree": "~3.0.8",
+
+
     "jquery.18n.properties": "http://fenixapps.fao.org/repository/js/jquery.i18n.properties/jquery.i18n.properties-1.0.9.tgz",
     "jquery-powertip": "https://github.com/stevenbenner/jquery-powertip/tarball/v1.2.0",
     "stickyjs": "~1.0.1",
@@ -62,6 +64,17 @@
   },
   "dependencies_to_add" : {
       "jqwidgets_faostat3": "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3_faostat3.tgz"
+  },
+  "dependencies_faostat3" : {
+      "jquery.18n.properties": "http://fenixapps.fao.org/repository/js/jquery.i18n.properties/jquery.i18n.properties-1.0.9.tgz",
+      "jquery-powertip": "https://github.com/stevenbenner/jquery-powertip/tarball/v1.2.0",
+      "stickyjs": "~1.0.1",
+      "historyjs": "~1.8.0-b2",
+      "scrollup": "https://github.com/markgoodyear/scrollup/tarball/v2.4.0",
+      "jquery-ui-faostat3": "http://fenixapps.fao.org/repository/js/jquery-ui/jquery-ui-1.10.3.tgz",
+      "jquery.chromatable": "http://fenixapps.fao.org/repository/js/jquery.chromatable/jquery.chromatable-1.3.0.tgz",
+      "jquery-mousewheel": "~3.1.12",
+      "jquery.fancybox": "http://fenixapps.fao.org/repository/js/jquery.fancybox/jquery.fancybox-2.1.4.tgz"
   }
 
 }
