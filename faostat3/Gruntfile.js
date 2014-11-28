@@ -127,7 +127,6 @@ grunt.initConfig({
 				'node_modules/jquery/dist/jquery.min.js',
 				'node_modules/hoverintent/dist/hoverintent.min.js',
 				'node_modules/jquery-powertip/dist/jquery.powertip.min.js',
-				//TODO https://github.com/stevenbenner/jquery-powertip
 				'node_modules/csvjson/csvjson.min.js',
 				//TODO https://github.com/aaronsnoswell/csvjson.js
 				//TODO https://github.com/stefanocudini/csvjson.js
@@ -159,13 +158,6 @@ grunt.initConfig({
 //TODO add rev plugin
 
 grunt.registerTask('default', [
-	'clean',
-	'copy',
-	'concat',
-	'cssmin'
-]);
-
-grunt.registerTask('faostat3', [
 	'clean',
 	'copy',
 	'concat',
