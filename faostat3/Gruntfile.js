@@ -7,7 +7,7 @@ grunt.loadNpmTasks('grunt-contrib-concat');
 grunt.loadNpmTasks('grunt-contrib-clean');
 grunt.loadNpmTasks('grunt-contrib-cssmin');
 grunt.loadNpmTasks('grunt-contrib-copy');
-grunt.loadNpmTasks('grunt-contrib-rev');
+grunt.loadNpmTasks('grunt-rev');
 
 grunt.initConfig({
 	pkg: grunt.file.readJSON('../package.json'),
@@ -27,13 +27,17 @@ grunt.initConfig({
 	clean: {
 		dist: {
 			src: ['dist/*']
-		},
-		src: {
-			src: ['dist/*']
-		}		
+		}	
 	},
 	copy: {
-
+        jqwidgets: {
+            nonull: true,
+            expand: true,
+            //flatten: true,
+            cwd: "node_modules/jqwidgets-2.8.3",
+            src: ['resources/**','styles/**'],
+            dest: "dist/jqwidgets/"
+        }
 /*        jstree: {
             nonull: true,
             expand: true,
@@ -66,30 +70,44 @@ grunt.initConfig({
 				"node_modules/hoverintent/dist/hoverintent.min.js",
 				"node_modules/powertip/dist/jquery.powertip.min.js",
 				"node_modules/jquery.i18n.properties-min.js",
-				"node_modules/jquery-ui-1.10.2/.custom.min.js",
+				"node_modules/jquery-ui-1.10.3/jquery-ui-1.10.3.custom.min.js",
 				"node_modules/jquery.fancybox/source/jquery.fancybox.pack.js",
-
 				"node_modules/underscore/underscore-min.js",
-				"node_modules/csvjson/csvjson.min.js",
+				"node_modules/csvjson/csvjson.min.js"
 				//"node_modules/nprogress/nprogress.js"
 				//TODO 1.0/jquery.jscrollpane.css
 			],
 			dest: 'dist/jquery.min.js'
+		},
+		jqwidgets: {
+			src: [
+				"node_modules/jqwidgets-2.8.3/jqx-all.js"
+			],
+			dest: 'dist/jqwidgets/jqwidgets.min.js'
 		}
 	},
 	cssmin: {
 		jquery: {
 			src: [
-				//"node_modules/bootstrap/dist/css/bootstrap.min.css",			
+				"node_modules/bootstrap/dist/css/bootstrap.min.css",
 				"node_modules/jquery.fancybox/source/helpers/jquery.fancybox-thumbs.css",
 				"node_modules/jquery.fancybox/source/helpers/jquery.fancybox-buttons.css",
 				"node_modules/jquery.fancybox/source/jquery.fancybox.css",
 				//"node_modules/nprogress/nprogress.css",
-				"node_modules/nprogress/nprogress.css"
+				"node_modules/nprogress/nprogress.css",
+
+				//TODO restyle faostat3 pages with 1.10.3
+				"node_modules/jquery-ui-1.9.2/smoothness/jquery-ui.custom.min.css"
 			],
 			dest: 'dist/jquery.min.css'
+		},
+		jqwidgets: {
+			src: [
+				"node_modules/jqwidgets-2.8.3/styles/jqx.base.css"
+			],
+			dest: 'dist/jqwidgets/jqwidgets.min.css'
 		}
-	}
+	}	
 });
 
 //TODO add rev plugin
