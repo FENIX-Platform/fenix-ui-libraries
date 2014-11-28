@@ -1,5 +1,5 @@
 .idea/
-node_modules/*
-dist/*
-npm-debug.log
 *.iml
+faostat3/node_modules/*
+faostat3/dist/*
+faostat3/npm-debug.log
