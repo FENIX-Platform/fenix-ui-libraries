@@ -38,7 +38,7 @@ grunt.initConfig({
             src: ['resources/**','styles/**'],
             dest: "dist/jqwidgets/"
         }
-/*        jstree: {
+/*        ,jqueryui: {
             nonull: true,
             expand: true,
             //flatten: true,
@@ -89,7 +89,7 @@ grunt.initConfig({
 	cssmin: {
 		jquery: {
 			src: [
-				"node_modules/bootstrap/dist/css/bootstrap.min.css",
+				//"node_modules/bootstrap/dist/css/bootstrap.min.css",
 				"node_modules/jquery.fancybox/source/helpers/jquery.fancybox-thumbs.css",
 				"node_modules/jquery.fancybox/source/helpers/jquery.fancybox-buttons.css",
 				"node_modules/jquery.fancybox/source/jquery.fancybox.css",
