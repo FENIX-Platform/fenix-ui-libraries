@@ -27,92 +27,21 @@ grunt.initConfig({
 	clean: {
 		dist: {
 			src: ['dist/*']
-		}
+		},
+		src: {
+			src: ['dist/*']
+		}		
 	},
 	copy: {
-        jquery: {
-            nonull: true,
-            src: 'node_modules/jquery/dist/jquery.min.js',
-            dest: 'libs/jquery.js'
-        },
-        backbone: {
-            nonull: true,
-            src: 'node_modules/backbone/backbone-min.js',
-            dest: 'libs/backbone.js'
-        },
-        "backbone.layoutmanager": {
-            nonull: true,
-            src: "node_modules/backbone.layoutmanager/backbone.layoutmanager.js",
-            dest: "libs/backbone.layoutmanager.js"
-        },
-        bootstrap_js: {
-            nonull: true,
-            src: "node_modules/bootstrap/dist/js/bootstrap.min.js",
-            dest: 'libs/bootstrap.js'
-        },
-        bootstrap_css: {
-            nonull: true,
-            src: "node_modules/bootstrap/dist/css/bootstrap.min.css",
-            dest: "libs/bootstrap.css"
-        },
-        nprogress_js: {
-            nonull: true,
-            src: "node_modules/nprogress/nprogress.js",
-            dest: "libs/nprogress.js"
-        },
-        nprogress_css: {
-            nonull: true,
-            src: "node_modules/nprogress/nprogress.css",
-            dest: "libs/nprogress.css"
-        },
-        requirejs: {
-            nonull: true,
-            src: "node_modules/requirejs/require.js",
-            dest: "libs/require.js"
-        },
-        domready: {
-            nonull: true,
-            src: "node_modules/domReady/domReady.js",
-            dest: "libs/domready.js"
-        },
-        text: {
-            nonull: true,
-            src: "node_modules/text/text.js",
-            dest: "libs/text.js"
-        },
-        i18n: {
-            nonull: true,
-            src: "node_modules/i18n/i18n.js",
-            dest: "libs/i18n.js"
-        },
-        underscore: {
-            nonull: true,
-            src: "node_modules/underscore/underscore-min.js",
-            dest: "libs/underscore.js"
-        },
-        jqwidgets_js: {
-            nonull: true,
-            src: "node_modules/jqwidgets/jqx-all.js",
-            dest: "libs/jqwidgets.js"
-        },
-        jqwidgets_css: {
-            nonull: true,
-            src: "node_modules/jqwidgets/styles/jqx.base.css",
-            dest: "libs/jqwidegts.css"
-        },
-        handlebars: {
-            nonull: true,
-            src: "node_modules/handlebars/dist/handlebars.min.js",
-            dest: "libs/handlebars.js"
-        },
-        jstree: {
+
+/*        jstree: {
             nonull: true,
             expand: true,
             //flatten: true,
             cwd: "node_modules/jstree/dist/",
             src: '**',
-            dest: "libs/jstree/"
-        }
+            dest: "src/jstree/"
+        }*/
 	},
 	concat: {
 		options: {
@@ -122,35 +51,43 @@ grunt.initConfig({
 				block: true
 			}
 		},
-		jquery_plugins: {
+		requirejs: {
 			src: [
-				'node_modules/jquery/dist/jquery.min.js',
-				'node_modules/hoverintent/dist/hoverintent.min.js',
-				'node_modules/jquery-powertip/dist/jquery.powertip.min.js',
-				'node_modules/csvjson/csvjson.min.js',
-				//TODO https://github.com/aaronsnoswell/csvjson.js
-				//TODO https://github.com/stefanocudini/csvjson.js
-				'libs/jquery.i18n.properties-min.js',
-				'libs/jquery-ui.custom.min.js'
+				"node_modules/requirejs/require.js",
+				"node_modules/domReady/domReady.js",
+				"node_modules/text/text.js",
+				"node_modules/i18n/i18n.js",
 			],
-			dest: 'dist/jquery_plugins.min.js'
+			dest: 'dist/requirejs.min.js'
+		},
+		jquery: {
+			src: [
+				"node_modules/jquery/dist/jquery.min.js",
+				"node_modules/hoverintent/dist/hoverintent.min.js",
+				"node_modules/powertip/dist/jquery.powertip.min.js",
+				"node_modules/jquery.i18n.properties-min.js",
+				"node_modules/jquery-ui-1.10.2/.custom.min.js",
+				"node_modules/jquery.fancybox/source/jquery.fancybox.pack.js",
+
+				"node_modules/underscore/underscore-min.js",
+				"node_modules/csvjson/csvjson.min.js",
+				//"node_modules/nprogress/nprogress.js"
+				//TODO 1.0/jquery.jscrollpane.css
+			],
+			dest: 'dist/jquery.min.js'
 		}
 	},
 	cssmin: {
-		options: {
-			banner: '<%= meta.banner %>'
-		},
-		combine: {
+		jquery: {
 			src: [
-				'css/fenix-ui-leaflet.css',
-				'css/fenix-ui-map.css'				
+				//"node_modules/bootstrap/dist/css/bootstrap.min.css",			
+				"node_modules/jquery.fancybox/source/helpers/jquery.fancybox-thumbs.css",
+				"node_modules/jquery.fancybox/source/helpers/jquery.fancybox-buttons.css",
+				"node_modules/jquery.fancybox/source/jquery.fancybox.css",
+				//"node_modules/nprogress/nprogress.css",
+				"node_modules/nprogress/nprogress.css"
 			],
-			dest: 'dist/fenix-ui-map.min.css'
-		},
-		minify: {
-			expand: true,
-			cwd: 'dist/',
-			src: '<%= cssmin.combine.dest %>'
+			dest: 'dist/jquery.min.css'
 		}
 	}
 });
