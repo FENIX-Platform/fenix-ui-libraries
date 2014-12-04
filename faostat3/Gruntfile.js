@@ -121,10 +121,7 @@ grunt.initConfig({
 				//TODO restyle faostat3 pages with 1.10.3
 				"node_modules/jquery-ui-1.9.2/smoothness/jquery-ui.custom.min.css",
                 "node_modules/jquery.scrollpane/jquery.jscrollpane.css",
-
-
-//                "node_modules//jquery.rangeslider/css-custom/iThing_custom"
-
+                "node_modules/scrollup/demo/css/themes/pill.css"
 
 			],
 			dest: 'dist/jquery.min.css'
