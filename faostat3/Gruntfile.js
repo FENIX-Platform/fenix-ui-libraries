@@ -84,7 +84,29 @@ grunt.initConfig({
 		},
 		jqwidgets: {
 			src: [
-				"node_modules/jqwidgets-2.8.3/jqx-all.js"
+                'node_modules/jqwidgets-2.8.3/jqxcore.js',
+                'node_modules/jqwidgets-2.8.3/jqxtabs.js',
+                'node_modules/jqwidgets-2.8.3/jqxscrollbar.js',
+                'node_modules/jqwidgets-2.8.3/jqxpanel.js',
+                'node_modules/jqwidgets-2.8.3/jqxtree.js',
+                'node_modules/jqwidgets-2.8.3/jqxexpander.js',
+                'node_modules/jqwidgets-2.8.3/jqxbuttons.js',
+                'node_modules/jqwidgets-2.8.3/jqxlistbox.js',
+                'node_modules/jqwidgets-2.8.3/jqxdropdownlist.js',
+                'node_modules/jqwidgets-2.8.3/jqxcombobox.js',
+                'node_modules/jqwidgets-2.8.3/jqxcheckbox.js',
+                'node_modules/jqwidgets-2.8.3/jqxdata.js',
+                'node_modules/jqwidgets-2.8.3/jqxradiobutton.js',
+                'node_modules/jqwidgets-2.8.3/jqxnumberinput.js',
+                'node_modules/jqwidgets-2.8.3/jqxgrid.js',
+                'node_modules/jqwidgets-2.8.3/jqxmenu.js',
+                'node_modules/jqwidgets-2.8.3/jqxgrid.filter.js',
+                'node_modules/jqwidgets-2.8.3/jqxgrid.grouping.js',
+                'node_modules/jqwidgets-2.8.3/jqxgrid.columnsresize.js',
+                'node_modules/jqwidgets-2.8.3/jqxgrid.sort.js',
+                'node_modules/jqwidgets-2.8.3/jqxgrid.selection.js',
+                'node_modules/jqwidgets-2.8.3/jqxgrid.export.js',
+                'node_modules/jqwidgets-2.8.3/jqxdata.expor.js',
 			],
 			dest: 'dist/jqwidgets/jqwidgets.min.js'
 		}
@@ -99,7 +121,10 @@ grunt.initConfig({
 				//TODO restyle faostat3 pages with 1.10.3
 				"node_modules/jquery-ui-1.9.2/smoothness/jquery-ui.custom.min.css",
                 "node_modules/jquery.scrollpane/jquery.jscrollpane.css",
-                "node_modules/jqwidgets-2.8.3/styles/jqx.base.css"
+
+
+//                "node_modules//jquery.rangeslider/css-custom/iThing_custom"
+
 
 			],
 			dest: 'dist/jquery.min.css'
@@ -108,7 +133,7 @@ grunt.initConfig({
 			src: [
 				"node_modules/jqwidgets-2.8.3/styles/jqx.base.css"
 			],
-			dest: 'dist/jqwidgets/jqwidgets.min.css'
+			dest: 'dist/jqwidgets/styles/jqwidgets.min.css'
 		}
 	}	
 });
