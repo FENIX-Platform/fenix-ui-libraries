@@ -114,9 +114,9 @@ grunt.initConfig({
 	cssmin: {
 		jquery: {
 			src: [
-				"node_modules/jquery.fancybox/source/helpers/jquery.fancybox-thumbs.css",
-				"node_modules/jquery.fancybox/source/helpers/jquery.fancybox-buttons.css",
-				"node_modules/jquery.fancybox/source/jquery.fancybox.css",
+//				"node_modules/jquery.fancybox/source/helpers/jquery.fancybox-thumbs.css",
+//				"node_modules/jquery.fancybox/source/helpers/jquery.fancybox-buttons.css",
+//				"node_modules/jquery.fancybox/source/jquery.fancybox.css",
 
 				//TODO restyle faostat3 pages with 1.10.3
 				"node_modules/jquery-ui-1.9.2/smoothness/jquery-ui.custom.min.css",
