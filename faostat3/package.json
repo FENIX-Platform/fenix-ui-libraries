@@ -41,6 +41,7 @@
     "handlebars": "~2.0.0",
     "jstree": "~3.0.8",
     "stickyjs": "~1.0.1",
+    "stickyjs-1.0.0": "http://fenixapps.fao.org/repository/js/stickyjs/stickjs-1.0.0.tgz",
     "historyjs": "~1.8.0-b2",
     "backbone": "~1.1.2",
     "backbone.layoutmanager": "~0.9.5",
@@ -64,7 +65,9 @@
     "jqwidgets-2.8.3": "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3.tgz",
     
     "jquery-ui-1.10.3": "http://fenixapps.fao.org/repository/js/jquery-ui/jquery-ui-1.10.3.tgz",
-    "jquery-ui-1.9.2": "http://fenixapps.fao.org/repository/js/jquery-ui/jquery-ui-1.9.2.tgz"
+    "jquery-ui-1.9.2": "http://fenixapps.fao.org/repository/js/jquery-ui/jquery-ui-1.9.2.tgz",
+
+     "jquery.rangeslider-5.1.1": "http://fenixapps.fao.org/repository/js/jquery.rangeslider/jquery.rangeslider-5.1.1.tgz"
   },
   "dependencies_maps": {
     "leaflet": "~0.7.3",

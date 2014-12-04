@@ -50,7 +50,7 @@ grunt.initConfig({
 	concat: {
 		options: {
 			banner: '<%= meta.banner %>',
-			separator: ';\n',
+//			separator: ';\n',
 			stripBanners: {
 				block: true
 			}
@@ -58,24 +58,27 @@ grunt.initConfig({
 		requirejs: {
 			src: [
 				"node_modules/requirejs/require.js",
-				"node_modules/domReady/domReady.js",
-				"node_modules/text/text.js",
-				"node_modules/i18n/i18n.js",
+//				"node_modules/domReady/domReady.js",
+//				"node_modules/text/text.js",
+//				"node_modules/i18n/i18n.js"
 			],
 			dest: 'dist/requirejs.min.js'
 		},
 		jquery: {
 			src: [
-				"node_modules/jquery/dist/jquery.min.js",
-				"node_modules/hoverintent/dist/hoverintent.min.js",
-				"node_modules/powertip/dist/jquery.powertip.min.js",
-				"node_modules/jquery.i18n.properties-min.js",
-				"node_modules/jquery-ui-1.10.3/jquery-ui-1.10.3.custom.min.js",
-				"node_modules/jquery.fancybox/source/jquery.fancybox.pack.js",
-				"node_modules/underscore/underscore-min.js",
-				"node_modules/csvjson/csvjson.min.js"
-				//"node_modules/nprogress/nprogress.js"
-				//TODO 1.0/jquery.jscrollpane.css
+				"node_modules/jquery-1.10.2/jquery-1.10.2.min.js",
+                "node_modules/jquery-ui-1.10.3/jquery-ui-1.10.3.custom.min.js",
+                "node_modules/jquery.chromatable/jquery.chromatable.js",
+                "node_modules/jquery-mousewheel/jquery.mousewheel.js",
+                "node_modules/jquery.fancybox/source/jquery.fancybox.pack.js",
+                "node_modules/historyjs/scripts/bundled/html4+html5/jquery.history.js",
+//				"node_modules/hoverintent/dist/hoverintent.min.js",
+				"node_modules/jquery-powertip/dist/jquery.powertip.min.js",
+                "node_modules/jquery.i18n.properties/jquery.i18n.properties-min.js",
+                "node_modules/jquery.stickyjs/jquery.sticky.js",
+                "node_modules/scrollup/dist/jquery.scrollUp.min.js",
+                "node_modules/jquery.scrollpane/jquery.jscrollpane.min.js",
+                "node_modules/jquery.rangeslider/jQRangeSlider-min.js"
 			],
 			dest: 'dist/jquery.min.js'
 		},
@@ -89,15 +92,15 @@ grunt.initConfig({
 	cssmin: {
 		jquery: {
 			src: [
-				//"node_modules/bootstrap/dist/css/bootstrap.min.css",
 				"node_modules/jquery.fancybox/source/helpers/jquery.fancybox-thumbs.css",
 				"node_modules/jquery.fancybox/source/helpers/jquery.fancybox-buttons.css",
 				"node_modules/jquery.fancybox/source/jquery.fancybox.css",
-				//"node_modules/nprogress/nprogress.css",
-				"node_modules/nprogress/nprogress.css",
 
 				//TODO restyle faostat3 pages with 1.10.3
-				"node_modules/jquery-ui-1.9.2/smoothness/jquery-ui.custom.min.css"
+				"node_modules/jquery-ui-1.9.2/smoothness/jquery-ui.custom.min.css",
+                "node_modules/jquery.scrollpane/jquery.jscrollpane.css",
+                "node_modules/jqwidgets-2.8.3/styles/jqx.base.css"
+
 			],
 			dest: 'dist/jquery.min.css'
 		},
